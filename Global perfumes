@@ -1,0 +1,505 @@
+<!index.html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Perfumes - Premium Fragrances & Samples</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f9f7fe 0%, #e6f3ff 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #6a0dad;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: #ff6b6b;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #6a0dad;
+        }
+        
+        .contact-header {
+            display: flex;
+            align-items: center;
+            background: #6a0dad;
+            color: white;
+            padding: 7px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        
+        .contact-header:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(106, 13, 173, 0.4);
+        }
+        
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1592945403242-b4debc4c55b4?ixlib=rb-4.0.3') no-repeat center/cover;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+        }
+        
+        .hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #2c0950;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: #4a4a4a;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+        
+        .phone-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #6a0dad;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 25px;
+            box-shadow: 0 4px 12px rgba(106, 13, 173, 0.3);
+        }
+        
+        .phone-badge i {
+            margin-right: 10px;
+        }
+        
+        .benefits {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2c0950;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .benefit-card {
+            background: #f8f5ff;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(106, 13, 173, 0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 3.5rem;
+            color: #6a0dad;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #2c0950;
+        }
+        
+        .perfume-showcase {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #ffffff 0%, #f0e6ff 100%);
+        }
+        
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .perfume-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+        }
+        
+        .perfume-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(106, 13, 173, 0.2);
+        }
+        
+        .perfume-img {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .perfume-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .perfume-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2c0950;
+        }
+        
+        .sample-badge {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+        
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1595425970377-2a3a809fb721?ixlib=rb-4.0.3') no-repeat center/cover;
+            position: relative;
+            color: white;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(106, 13, 173, 0.85);
+        }
+        
+        .cta-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+        
+        .contact-footer {
+            background: #2c0950;
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .contact-info {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #6a0dad;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            background: #ff6b6b;
+        }
+        
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .contact-header {
+                padding: 5px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">
+                    <i class="fas fa-wind"></i>
+                    GlobalPerfumes.in
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Perfumes</a></li>
+                    <li><a href="#">Samples</a></li>
+                    <li><a href="#">Brands</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+                <a href="tel:8447878302" class="contact-header">
+                    <i class="fas fa-phone"></i> 8447878302
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Discover Your Signature Scent</h1>
+                <p>Try premium perfume samples before committing to a full bottle</p>
+                <a href="#products" class="cta-button">
+                    Explore Fragrances <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <div class="phone-badge">
+                    <i class="fas fa-phone-alt"></i> Call Now: 8447878302
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Start With Samples?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Try Before You Invest</h3>
+                    <p>Experience luxury fragrances without the commitment of a full bottle</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Discover New Favorites</h3>
+                    <p>Experiment with different scents to find your perfect match</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Affordable Luxury</h3>
+                    <p>Enjoy premium fragrances at a fraction of the cost</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perfume Showcase -->
+    <section class="perfume-showcase" id="products">
+        <div class="container">
+            <h2 class="section-title">Popular Fragrances</h2>
+            <div class="showcase-grid">
+                <div class="perfume-card">
+                    <div class="perfume-img" style="background-image: url('https://images.unsplash.com/photo-1590736144720-746fbd0f8b1c?ixlib=rb-4.0.3');"></div>
+                    <div class="perfume-info">
+                        <h3>Premium Eau de Parfum</h3>
+                        <span class="sample-badge">Samples Available</span>
+                        <p>Experience luxury in every drop</p>
+                    </div>
+                </div>
+                <div class="perfume-card">
+                    <div class="perfume-img" style="background-image: url('https://images.unsplash.com/photo-1595425970377-2a3a809fb721?ixlib=rb-4.0.3');"></div>
+                    <div class="perfume-info">
+                        <h3>Designer Fragrance Collection</h3>
+                        <span class="sample-badge">Samples Available</span>
+                        <p>World's most sought-after scents</p>
+                    </div>
+                </div>
+                <div class="perfume-card">
+                    <div class="perfume-img" style="background-image: url('https://images.unsplash.com/photo-1592945403242-b4debc4c55b4?ixlib=rb-4.0.3');"></div>
+                    <div class="perfume-info">
+                        <h3>Exotic Oud Blends</h3>
+                        <span class="sample-badge">Samples Available</span>
+                        <p>Rich, complex and unforgettable</p>
+                    </div>
+                </div>
+                <div class="perfume-card">
+                    <div class="perfume-img" style="background-image: url('https://images.unsplash.com/photo-1595425899261-31d7f9d2bce7?ixlib=rb-4.0.3');"></div>
+                    <div class="perfume-info">
+                        <h3>Fresh Citrus Scents</h3>
+                        <span class="sample-badge">Samples Available</span>
+                        <p>Energizing and refreshing fragrances</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Find Your Perfect Fragrance</h2>
+                <p>Try our premium samples before committing to a full bottle</p>
+                <a href="tel:8447878302" class="cta-button">
+                    <i class="fas fa-phone-alt"></i> Call to Order: 8447878302
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="contact-footer">
+        <div class="container">
+            <h2>Global Perfumes</h2>
+            <p>Your destination for premium fragrances and samples</p>
+            <div class="contact-info">
+                <i class="fas fa-phone-alt"></i> 8447878302
+            </div>
+            <p>globalperfumes.in</p>
+            
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Global Perfumes. All rights reserved.</p>
+                <p>Discover your signature scent with confidence</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
